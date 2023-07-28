@@ -10,12 +10,17 @@ pipeline {
             }
         }
     }
-
+    
     post {
         always {
-            emailext body: "Code changes detected in the repository.", 
-                    subject: "Build Notification - ${currentBuild.currentResult}", 
-                    to: "your-email@example.com"
+            // Send email notification using SendGrid
+            emailext (
+                subject: "Jenkins Build ${currentBuild.currentResult}",
+                body: "The Jenkins build has ${currentBuild.currentResult}.",
+                recipientProviders: [[$class: 'CulpritsRecipientProvider']],
+                to: "us323619@gmail.com",
+                from: "jenkins@example.com"
+            )
         }
     }
 }
