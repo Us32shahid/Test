@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'cp index.html build/'  // Copy the index.html file to a build directory..
+                sh 'mkdir -p build && cp index.html build/'  // Copy the index.html file to a build directory..
             }
         }
     }
