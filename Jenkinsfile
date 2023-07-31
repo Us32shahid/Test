@@ -9,11 +9,22 @@ pipeline {
                 sh 'mkdir -p build && cp index.html build/'  // Copy the index.html file to a build directory..
             }
         }
-        
-    post{
-        success{
-            emailext body: 'This Email sent out from Jenkins', subject: 'Test Notifications', to: 'us323619@gmail.com'
-        }          
-    }            
- }
+    }
+    
+    post {
+        success {
+            // Send email notification when the build is successful
+            emailext (
+                to: 'us323619@gmail.com',
+                subject: 'Test Notifications - Build Successful',
+                body: '''Hi,
+
+The build of ${env.JOB_NAME} #${env.BUILD_NUMBER} has completed successfully.
+
+Thanks,
+Jenkins'''
+                // Additional options like bcc, cc, from, replyTo can be added if needed
+            )
+        }
+    }
 }
