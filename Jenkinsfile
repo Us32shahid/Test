@@ -10,20 +10,10 @@ pipeline {
             }
         }
         
-        stage('Email Notification') {
-            steps {
-                // Send email notification after the build stage is completed
-                emailext (
-                    from:'us323619@gmail.com',
-                    to: 'us323619@gmail.com',
-                    subject: 'Jenkins Job',
-                    body: '''This email sent from Jenkins
-
-Thanks
-Jenkins'''
-                    // Additional options like bcc, cc, from, replyTo can be added if needed
-                )
-            }
+      post{
+        success{
+            emailext body: 'This Email sent out from Jenkins', subject: 'Test Notifications', to: 'us323619@gmail.com'
+        }
         }
     }
 }
