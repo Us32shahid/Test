@@ -9,7 +9,7 @@ pipeline {
                 sh 'mkdir -p build && cp index.html build/'  // Copy the index.html file to a build directory..
             }
         }
-
+    }
         stage('Email Notification') {
             mail bcc: '', body: '''This email sent from jenkins
             Thanks
@@ -17,7 +17,7 @@ pipeline {
 
             The build has completed.
                 
-            }
-        }
-    }
+          }
+}
+
 
