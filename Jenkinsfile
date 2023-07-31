@@ -12,22 +12,15 @@ pipeline {
     }
     
 post {
-        always {
-            // Archive the build artifacts for Jenkins
-            archiveArtifacts artifacts: 'build/**', allowEmptyArchive: true
-        }
-        success {
-            // Send a success email notification
-            emailext (
-                from: 'usama@ctoxi.com',
-                to: 'us323619@gmail.com',
-                subject: "Jenkins Job Succeeded: ${currentBuild.fullDisplayName}",
-                body: '''Hi this email sent from Jenkins
-
-Congratulations! Your Jenkins job "${currentBuild.fullDisplayName}" has succeeded.
-
-Thanks,
-Usama''',)
-        }
+    always {
+        emailext (
+            to: 'bar@foo.com',
+            subject: "${currentBuild.currentResult}: ${env.JOB_NAME} - build ${currentBuild.number}",
+            body: '${FILE, path="$WORKSPACE/results/summary.txt"}'
+        )
     }
 }
+
+}        
+    
+
