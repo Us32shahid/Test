@@ -10,12 +10,10 @@ pipeline {
             }
         }
     }
-    
-    post {
-        always {
-            // Send email notification using SendGrid
-            emailext (
-                mail bcc: '', body: 'Hi, This is Email sent from Jenkins', cc: '', from: '', replyTo: '', subject: 'jenkins-job', to: 'us323619@gmail.com')
-        }
+    stage('Email Notification'){
+       mail bcc: '', body: '''Hi this email sent from Jenkins
+
+Thanks
+usama''', cc: '', from: '', replyTo: '', subject: 'Jenkins job', to: 'us323619@gmail.com'
     }
 }
