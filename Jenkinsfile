@@ -17,7 +17,7 @@ pipeline {
             emailext (
                 to: 'us323619@gmail.com',
                 subject: 'Test Notifications - Build Successful',
-                body: '''Hi,
+                body: '''Hi, 
 
 The build of ${env.JOB_NAME} #${env.BUILD_NUMBER} has completed successfully.
 
