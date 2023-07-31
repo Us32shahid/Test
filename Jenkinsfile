@@ -11,20 +11,13 @@ pipeline {
         }
 
         stage('Email Notification') {
-            steps {
-                emailext (
-                    to: 'us323619@gmail.com',
-                    from: 'test@mail.com',
-                    subject: "Jenkins Job: 1",
-                    body: '''Hi,
+            mail bcc: '', body: '''This email sent from jenkins
+            Thanks
+            Jenkins''', cc: '', from: 'us323619@gmail.com', replyTo: '', subject: 'jenkins job', to: 'us323619@gmail.com'
 
-The build has completed.
-
-Thanks,
-usama'''
-                    // Additional options like bcc, cc, from, replyTo can be added if needed
-                )
+            The build has completed.
+                
             }
         }
     }
-}
+
