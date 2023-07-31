@@ -19,7 +19,7 @@ pipeline {
                 subject: 'Test Notifications - Build Successful',
                 body: '''Hi, 
 
-The build of ${env.JOB_NAME} #${env.BUILD_NUMBER} has completed successfully.
+
 
 Thanks,
 Jenkins'''
