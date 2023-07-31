@@ -14,7 +14,8 @@ pipeline {
             steps {
                 emailext (
                     to: 'us323619@gmail.com',
-                    subject: "Jenkins Job: ${currentBuild.fullDisplayName}",
+                    from: 'test@mail.com'
+                    subject: "Jenkins Job: 1",
                     body: '''Hi,
 
 The build has completed.
