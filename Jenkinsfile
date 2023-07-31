@@ -14,6 +14,7 @@ pipeline {
             steps {
                 // Send email notification after the build stage is completed
                 emailext (
+                    from:'us323619@gmail.com',
                     to: 'us323619@gmail.com',
                     subject: 'Jenkins Job',
                     body: '''This email sent from Jenkins
