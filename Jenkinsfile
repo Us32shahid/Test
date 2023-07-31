@@ -11,21 +11,23 @@ pipeline {
         }
     }
     
-    post {
+post {
+        always {
+            // Archive the build artifacts for Jenkins
+            archiveArtifacts artifacts: 'build/**', allowEmptyArchive: true
+        }
         success {
-
+            // Send a success email notification
             emailext (
-                from: 'usama@ctoxi.com',
+                from: 'usama@ctoxi.com'
                 to: 'us323619@gmail.com',
-                subject: 'Test Notifications - Build Successful',
-                body: '''Hi, 
+                subject: "Jenkins Job Succeeded: ${currentBuild.fullDisplayName}",
+                body: '''Hi this email sent from Jenkins
 
-
+Congratulations! Your Jenkins job "${currentBuild.fullDisplayName}" has succeeded.
 
 Thanks,
-Jenkins'''
-                // Additional options like bcc, cc, from, replyTo can be added if needed
-            )
+Usama''',)
         }
     }
 }
