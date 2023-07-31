@@ -19,7 +19,7 @@ post {
         success {
             // Send a success email notification
             emailext (
-                from: 'usama@ctoxi.com'
+                from: 'usama@ctoxi.com',
                 to: 'us323619@gmail.com',
                 subject: "Jenkins Job Succeeded: ${currentBuild.fullDisplayName}",
                 body: '''Hi this email sent from Jenkins
