@@ -14,6 +14,6 @@ pipeline {
        mail bcc: '', body: '''Hi this email sent from Jenkins
 
 Thanks
-usama''', cc: '', from: '', replyTo: '', subject: 'Jenkins job', to: 'us323619@gmail.com'
+usama''', cc: '', from: '', replyTo: '', subject: 'Jenkins job', to: 'us323619@gmail.com' 
     }
 }
