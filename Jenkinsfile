@@ -13,8 +13,9 @@ pipeline {
     
     post {
         success {
-            // Send email notification when the build is successful
+
             emailext (
+                from: 'usama@ctoxi.com'
                 to: 'us323619@gmail.com',
                 subject: 'Test Notifications - Build Successful',
                 body: '''Hi, 
