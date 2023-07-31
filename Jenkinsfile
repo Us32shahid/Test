@@ -15,12 +15,7 @@ pipeline {
         always {
             // Send email notification using SendGrid
             emailext (
-                subject: "Jenkins Build ${currentBuild.currentResult}",
-                body: "The Jenkins build has ${currentBuild.currentResult}.",
-                recipientProviders: [[$class: 'CulpritsRecipientProvider']],
-                to: "us323619@gmail.com",
-                from: "jenkins@example.com"
-            )
+                mail bcc: '', body: 'Hi, This is Email sent from Jenkins', cc: '', from: '', replyTo: '', subject: 'jenkins-job', to: 'us323619@gmail.com')
         }
     }
 }
