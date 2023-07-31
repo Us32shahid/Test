@@ -14,7 +14,7 @@ pipeline {
             steps {
                 emailext (
                     to: 'us323619@gmail.com',
-                    from: 'test@mail.com'
+                    from: 'test@mail.com',
                     subject: "Jenkins Job: 1",
                     body: '''Hi,
 
