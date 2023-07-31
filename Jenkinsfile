@@ -10,10 +10,14 @@ pipeline {
             }
         }
         
-      post{
-        success{
+    post {
+        success {
             emailext body: 'This Email sent out from Jenkins', subject: 'Test Notifications', to: 'us323619@gmail.com'
-        }
-        }
-    }
+        }    
+
+         
+    }    
+         
+ }
+
 }
