@@ -10,7 +10,8 @@ pipeline {
             }
         }
     }
-    stage('Email Notification'){
+    stage
+        stage('Email Notification'){
        mail bcc: '', body: '''Hi this email sent from Jenkins
 
 Thanks
