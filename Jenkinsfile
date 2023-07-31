@@ -16,8 +16,7 @@ pipeline {
             Jenkins''', cc: '', from: 'us323619@gmail.com', replyTo: '', subject: 'jenkins job', to: 'us323619@gmail.com'
 
             The build has completed.
-                
+    
     }
+
 }
-
-
