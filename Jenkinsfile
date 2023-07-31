@@ -17,7 +17,7 @@ pipeline {
                     subject: "Jenkins Job: ${currentBuild.fullDisplayName}",
                     body: '''Hi,
 
-The build of ${env.JOB_NAME} ${env.BUILD_NUMBER} has completed.
+The build has completed.
 
 Thanks,
 usama'''
