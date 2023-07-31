@@ -1,12 +1,11 @@
 pipeline {
     agent {
         label "master" // Use the master node as an agent
-
+	}
     stages {
         stage('Build') {
             steps {
-                // Your build steps here, e.g., compiling, testing, etc.
-                sh 'mkdir -p build && cp index.html build/'  // Copy the index.html file to a build directory
+                sh 'mkdir -p build && cp index.html build/'  // Copy the index.html file to a build directory..
             }
         }
     }
@@ -48,5 +47,4 @@ Usama''',
             )
         }
     }
-}
 }
