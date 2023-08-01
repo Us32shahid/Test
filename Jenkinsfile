@@ -14,8 +14,8 @@ pipeline {
 post {
     always {
         
-        emailext body: ''${FILE, path="$WORKSPACE/results/summary.txt"}'', subject: '${currentBuild.currentResult}: ${env.JOB_NAME} - build ${currentBuild.number}",', to: 'saad89.linux@gmail.com,us323619@gmail.com'
-
+        (emailext body: ''${FILE, path="$WORKSPACE/results/summary.txt"}'', subject: '${currentBuild.currentResult}: ${env.JOB_NAME} - build ${currentBuild.number}",', to: 'saad89.linux@gmail.com,us323619@gmail.com'
+        )
 
         
     }
