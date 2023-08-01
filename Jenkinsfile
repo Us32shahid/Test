@@ -1,4 +1,4 @@
-# Jenkins Pipeline Script Example
+
 pipeline {
     agent any
 
