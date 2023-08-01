@@ -15,7 +15,7 @@ pipeline {
             // Sending email notification using emailext plugin
             emailext body: "Hi - This is an automated email sent from Jenkins. Your build has completed.",
                      subject: "Jenkins Build Notification",
-                     to: "farmann@gmail.com"
+                     to: "saadiqbalbutt89@gmail.com"
         }
     }
 }
